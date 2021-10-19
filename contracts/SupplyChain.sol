@@ -83,7 +83,7 @@ contract SupplyChain {
   // an Item has been added?
 
   modifier forSale (uint _sku) {
-    require(items[_sku].state == State.ForSale);
+    require(items[_sku].state == State.ForSale && items[_sku].seller != address(0));
     _;
   }
 
